@@ -1,0 +1,20 @@
+name: Test dispatch workflows
+on:
+  workflow_dispatch:
+    inputs:
+jobs:
+  dispatch-release:
+    name: Dispatch release for RCs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger release and wait
+        uses: the-actions-org/workflow-dispatch@v4
+        with:
+          workflow: release
+          repo: tanukiops/dest-repo1
+          token: ${{ secrets.GITHUB_TOKEN }}
+          inputs: '{ "rc_release_tag":"${{ steps.rc-version.outputs.rc_version }}"}'
+          ref: main
+          wait-for-completion: true
+          workflow-logs: print
+          display-workflow-run-url: true
