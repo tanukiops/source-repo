@@ -12,7 +12,7 @@ jobs:
           workflow: release
           repo: tanukiops/dest-repo1
           token: ${{ secrets.PAT }}
-          inputs: '{ "rc_release_tag":"${{ steps.rc-version.outputs.rc_version }}"}'
+          inputs: '{ "rc_release_tag":"test"}'
           ref: main
           wait-for-completion: true
           workflow-logs: print
