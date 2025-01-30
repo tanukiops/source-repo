@@ -1,7 +1,6 @@
 name: Test dispatch workflows
 on:
   workflow_dispatch:
-    inputs:
 jobs:
   dispatch-release:
     name: Dispatch release for RCs
