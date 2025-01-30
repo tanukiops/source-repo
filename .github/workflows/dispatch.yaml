@@ -11,7 +11,7 @@ jobs:
         with:
           workflow: release
           repo: tanukiops/dest-repo1
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
           inputs: '{ "rc_release_tag":"${{ steps.rc-version.outputs.rc_version }}"}'
           ref: main
           wait-for-completion: true
